@@ -30,7 +30,7 @@ export const Works = () => {
   const { classes } = useStyles();
 
   const cards = data.map((el, idx) => (
-    <Card key={idx} p="md" radius="md" component="a" className={classes.card}>
+    <Card key={idx} p="md" radius="md" className={classes.card}>
       <AspectRatio ratio={16 / 9}>
         <Image src={el.images[0]} alt={el.name} />
       </AspectRatio>

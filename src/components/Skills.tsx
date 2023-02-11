@@ -3,6 +3,7 @@ import { FC, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { SkillData } from "./types";
 import { skillDatas } from "./data";
+import { Container, Flex } from "@mantine/core";
 
 type SkillGroupProps = {
   header: string;
@@ -12,7 +13,7 @@ type CardProps = {
   data: SkillData;
 };
 
-export const Card: FC<CardProps> = ({ data }) => {
+export const Card = ({ data }: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [opened, setOpend] = useState(false);
 
@@ -51,27 +52,29 @@ export const Card: FC<CardProps> = ({ data }) => {
 
 const SkillGroup = (props: SkillGroupProps) => {
   return (
-    <>
-      <h3>{props.header}</h3>
+    <Container>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h3>{props.header}</h3>
+      </div>
       <div css={styles.skillImageContainer}>
-        {props.datas.map((data) => (
-          <Card data={data}></Card>
+        {props.datas.map((data, index) => (
+          <Card key={index} data={data} />
         ))}
       </div>
-    </>
+    </Container>
   );
 };
 
 export const Skills: FC = () => {
   return (
-    <p style={{ textAlign: "center" }}>
+    <Flex justify="center" direction="column">
       <SkillGroup header="Programming Language" datas={skillDatas.language} />
       <SkillGroup header="Framework" datas={skillDatas.framework} />
       <SkillGroup
         header="Development Tool"
         datas={skillDatas.developmentTool}
       />
-    </p>
+    </Flex>
   );
 };
 

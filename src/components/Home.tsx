@@ -19,9 +19,9 @@ export const Home = (props: any) => {
       <section id="aboutme">
         <div className="container">
           <h1>Hayato Fukuoka</h1>
-          <p style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center" }}>
             <h2>About me</h2>
-          </p>
+          </div>
           <Flex
             direction={{ base: "column", sm: "row" }}
             gap="xl"
@@ -58,22 +58,22 @@ export const Home = (props: any) => {
         </div>
 
         <section id="works" className="container">
-          <p style={{ textAlign: "center", paddingTop: "40px" }}>
+          <div style={{ textAlign: "center", paddingTop: "40px" }}>
             <h2 className="section-heading ">Works</h2>
-          </p>
+          </div>
           <Works></Works>
         </section>
 
         <section id="skills" className="container">
-          <p style={{ textAlign: "center", paddingTop: "40px" }}>
+          <div style={{ textAlign: "center", paddingTop: "40px" }}>
             <h2>Skills</h2>
-          </p>
+          </div>
           <Skills></Skills>
         </section>
         <section id="experiences" className="container">
-          <p style={{ textAlign: "center", paddingTop: "40px" }}>
+          <div style={{ textAlign: "center", paddingTop: "40px" }}>
             <h2>Experiences</h2>
-          </p>
+          </div>
           <Flex style={{ justifyContent: "center" }}>
             <div>
               <div>Internship: Langsmith Co.</div>
