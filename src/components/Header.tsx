@@ -28,8 +28,8 @@ export const MyHeader: FC = () => {
           }}
         >
           <MyNavLink href="#aboutme" label="About me" />
-          <MyNavLink href="#skills" label="Skills" />
           <MyNavLink href="#works" label="Works" />
+          <MyNavLink href="#skills" label="Skills" />
           <MyNavLink href="#experiences" label="Experiences" />
         </SimpleGrid>
       </Group>
