@@ -1,19 +1,11 @@
 import { FC, useRef, useState } from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { SkillData } from "./types";
-import { skillDatas } from "./data";
+import { CardProps, SkillGroupProps } from "../data/types";
+import { skillDatas } from "../data/data";
 import { Container, Flex } from "@mantine/core";
 
-type SkillGroupProps = {
-  header: string;
-  datas: SkillData[];
-};
-type CardProps = {
-  data: SkillData;
-};
-
-export const Card = ({ data }: CardProps) => {
+const Card = ({ data }: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [opened, setOpend] = useState(false);
 
@@ -80,38 +72,40 @@ export const Skills: FC = () => {
 
 const styles = {
   skillImageContainer: css`
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     margin: 10px;
-    grid-gap: 15px;
+    grid-gap: 20px;
   `,
   container: css`
     position: relative;
     width: 80px;
     height: 80px;
     display: grid;
-    transition: all 0.3s;
+    transition: all 0.5s;
+    img {
+      transition: all 0.5s;
+    }
 
     &.active {
-      width: 160px;
+      width: 200px;
+      img {
+        transform: scale(1.2);
+      }
     }
   `,
 
   detail: css`
     position: absolute;
-    left: 85px;
+    left: 100px;
     display: grid;
   `,
   text: css`
     padding-left: 5px;
-    display: flex;
-    align-items: center;
     white-space: nowrap;
   `,
   subText: css`
     padding-left: 5px;
-    display: flex;
-    align-items: center;
     white-space: nowrap;
     color: #7d7d7d;
   `,

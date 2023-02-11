@@ -7,9 +7,9 @@ import {
 import { useColorScheme } from "@mantine/hooks";
 import { useState } from "react";
 
-import "./App.css";
-import { MyHeader } from "./components/Header";
-import Home from "./components/Home";
+import "./App.scss";
+import { MyHeader } from "./layout/MyHeader";
+import Home from "./layout/Home";
 
 function App() {
   const preferredColorScheme = useColorScheme();

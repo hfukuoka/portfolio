@@ -10,3 +10,12 @@ export type SkillDatas = {
   framework: SkillData[];
   developmentTool: SkillData[];
 };
+
+export type SkillGroupProps = {
+  header: string;
+  datas: SkillData[];
+};
+
+export type CardProps = {
+  data: SkillData;
+};

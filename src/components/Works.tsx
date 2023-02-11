@@ -10,7 +10,7 @@ import {
   Anchor,
 } from "@mantine/core";
 import { TbLink } from "react-icons/tb";
-import { data, LinkType } from "./data";
+import { data, LinkType } from "../data/data";
 
 export const Works = () => {
   const useStyles = createStyles((theme) => ({
