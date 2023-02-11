@@ -2,7 +2,13 @@ import "../App.css";
 import { Skills } from "./Skills";
 import { Works } from "./Works";
 import { Footer } from "./Footer";
-import { ActionIcon, Flex, useMantineColorScheme } from "@mantine/core";
+import {
+  ActionIcon,
+  Flex,
+  Stack,
+  useMantineColorScheme,
+  Image,
+} from "@mantine/core";
 import { Text } from "@mantine/core";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
@@ -16,25 +22,39 @@ export const Home = (props: any) => {
           <p style={{ textAlign: "center" }}>
             <h2>About me</h2>
           </p>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={`/assets/images/profile.jpg`}
-              className="profileImage"
-              alt=""
-              style={{ marginTop: "20px" }}
+          <Flex
+            direction={{ base: "column", sm: "row" }}
+            gap="xl"
+            justify="center"
+            align="center"
+          >
+            <Image
+              width={200}
+              p="xl"
+              radius="xl"
+              src="/assets/images/profile.jpg"
+              alt="Hayato Fukuoka"
             />
-            <div
-              style={{ fontSize: "18px", width: "700px", marginLeft: "40px" }}
+            <Stack
+              style={{
+                fontSize: "18px",
+                marginLeft: "40px",
+                overflow: "auto",
+              }}
             >
-              <p>I'm a 4th year undergraduate student at Tohoku University.</p>
-              <p>I became interested in programming through AtCoder.</p>
-              <p>
+              <Text size="md">
+                I'm a 4th year undergraduate student at Tohoku University.
+              </Text>
+              <Text size="md">
+                I became interested in programming through AtCoder.
+              </Text>
+              <Text size="md">
                 Currently, I'm gaining experience mainly in front-end at a
                 venture company while researching computer vision using machine
                 learning.
-              </p>
-            </div>
-          </div>
+              </Text>
+            </Stack>
+          </Flex>
         </div>
 
         <section id="works" className="container">
@@ -50,7 +70,7 @@ export const Home = (props: any) => {
           </p>
           <Skills></Skills>
         </section>
-        <section id="experience" className="container">
+        <section id="experiences" className="container">
           <p style={{ textAlign: "center", paddingTop: "40px" }}>
             <h2>Experiences</h2>
           </p>
